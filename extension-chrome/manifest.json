@@ -1,0 +1,23 @@
+{
+    "name": "QI 'Enhancer'",
+    "description": "An extension to enhance your Webnovel.com experience",
+    "version": "1.0",
+    "manifest_version": 2,
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://*.webnovel.com/book/*", "http://*.webnovel.com/book/*"],
+            "js": ["base64.js", "rawdeflate.js","sjcl.js","marked.js", "bookScripts.js"]
+        }
+    ],
+    "permissions": [
+        "alarms",
+        "storage",
+        "https://*/*"
+    ]
+}
